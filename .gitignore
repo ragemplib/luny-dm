@@ -1,0 +1,9 @@
+bin
+maps
+packages
+plugins
+*.dll
+*.tar.gz
+*.exe
+*.json
+dotnet/runtime
