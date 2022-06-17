@@ -7,3 +7,7 @@ plugins
 *.exe
 *.json
 dotnet/runtime
+dotnet/resources/.idea
+dotnet/*.txt
+dotnet/resources/server/obj/
+dotnet/resources/server/bin/
