@@ -6,6 +6,7 @@ plugins
 *.tar.gz
 *.exe
 *.json
+!conf.json
 dotnet/runtime
 dotnet/resources/.idea
 dotnet/*.txt
