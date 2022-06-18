@@ -1,0 +1,9 @@
+CREATE DATABASE luny;
+\c luny
+CREATE TABLE players (
+	id serial PRIMARY KEY,
+	login VARCHAR(20) UNIQUE NOT NULL,
+	email VARCHAR(20) UNIQUE NOT NULL,
+	password VARCHAR(255) NOT NULL,
+	score INT
+);
