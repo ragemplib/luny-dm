@@ -1,0 +1,17 @@
+﻿<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Unnamed" type="RunExe" factoryName=".NET Executable" nameIsGenerated="true">
+    <option name="EXE_PATH" value="$PROJECT_DIR$/../../../ragemp-server.exe" />
+    <option name="PROGRAM_PARAMETERS" value="" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../../.." />
+    <option name="PASS_PARENT_ENVS" value="1" />
+    <envs>
+      <env name="DISCORD_URL" value="https://discord.com/api/webhooks/987627271248551967/6wuz_73InnF4c87QKlFAaBqR0Y5TG3PG_u2o__1PInhiqwtiMRvdhiqo8PmiMQK6FQoy" />
+    </envs>
+    <option name="USE_EXTERNAL_CONSOLE" value="0" />
+    <option name="USE_MONO" value="0" />
+    <option name="RUNTIME_ARGUMENTS" value="" />
+    <method v="2">
+      <option name="Build Solution" enabled="true" />
+    </method>
+  </configuration>
+</component>

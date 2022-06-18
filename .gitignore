@@ -14,3 +14,4 @@ dotnet/resources/server/bin/
 clientside/.idea
 clientside/bin
 clientside/obj
+dotnet/resources/server/.idea
