@@ -25,13 +25,9 @@ namespace server
             NAPI.Util.ConsoleOutput("Player " + player.Name + " disconnected from the server");
         }
 
-        [ServerEvent(Event.ChatMessage)]
-        public void onPlayerCommand(Player player, String msg) {
-            if (msg[0] == '/') {
-                NAPI.Util.ConsoleOutput("Player " + player.Name + " entered the command: " + msg);
-            } else {
-                NAPI.Util.ConsoleOutput("Player " + player.Name + " entered the message: " + msg);
-            }
+        [Command(command: "time", ACLRequired = false, GreedyArg = false, SensitiveInfo = false)]
+        public void onPlayerCommand(Player player) {
+            NAPI.ClientEvent.TriggerClientEvent(player, "Time");
         }
     }
 }

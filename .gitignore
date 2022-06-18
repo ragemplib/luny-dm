@@ -11,3 +11,6 @@ dotnet/resources/.idea
 dotnet/*.txt
 dotnet/resources/server/obj/
 dotnet/resources/server/bin/
+clientside/.idea
+clientside/bin
+clientside/obj

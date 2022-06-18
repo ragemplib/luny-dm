@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+    <ItemGroup>
+    <Reference Include="RAGE">
+      <HintPath>C:\RAGEMP\dotnet\rage-sharp.dll</HintPath> <!-- Or absolute path to your X:/RAGEMP/dotnet/rage-sharp.dll -->
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>

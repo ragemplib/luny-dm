@@ -1,0 +1,1 @@
+C:\cwrsync_6.2.4_x64_free\bin\rsync.exe -am --include='*.cs' --exclude='*' /cygdrive/c/RAGEMP/server-files/clientside/ /cygdrive/c/RAGEMP/server-files/client_packages/cs_packages 
