@@ -1,9 +1,16 @@
 {
 	"maxplayers" : 100,
-	"name" : "RAGE:MP Unofficial server", 
+	"gamemode": "deathmatch",
+	"name" : "Luny DM [dm, tdm]",
+	"disallow-multiple-connections-per-ip": true,
+	"trigger-compression-logging": true,
+	"allow-cef-debugging": true,
+	"nodejs": false,
+	"voice-chat": true,
+	"limit-time-of-connections-per-ip": 99,
 	"gamemode" : "freeroam", 
 	"stream-distance" : 500.0,
 	"announce" : false,
-	"csharp" : "disabled",
+	"csharp" : "enabled",
 	"port": 22005
 }

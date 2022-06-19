@@ -17,3 +17,4 @@ clientside/bin
 clientside/obj
 dotnet/resources/server/.idea
 dotnet/resources/server/.run
+client_packages

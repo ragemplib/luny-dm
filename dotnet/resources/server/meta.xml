@@ -1,5 +1,4 @@
 <meta>
 	<info name="Server" description="Main server" />
-<!--	<script src="Server.cs" />-->
 	<script src="bin\Debug\netcoreapp3.1\server.dll" />
 </meta>
