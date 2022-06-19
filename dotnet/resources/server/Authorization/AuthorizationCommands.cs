@@ -9,13 +9,7 @@ namespace server.Authorization {
     public class AuthorizationCommands : Script {
         [Command(command: "reg", Description = "Register new account")]
         public async Task OnRegistration(Player player, string login, string email, string password) {
-            try {
-                await DatabaseManager.RegisterPlayer(login, email, password);
-            }
-            catch (Exception e) {
-                NAPI.Util.ConsoleOutput("err: " + e);
-            }
-
+            await DatabaseManager.RegisterPlayer(login, email, password);
         }
 
         [Command(command: "log", Description = "Login into account")]
