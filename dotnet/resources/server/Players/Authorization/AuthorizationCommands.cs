@@ -1,11 +1,9 @@
-﻿using System;
-using GTANetworkAPI;
-using GTANetworkMethods;
+﻿using GTANetworkAPI;
 using server.Database;
 using Player = GTANetworkAPI.Player;
 using Task = System.Threading.Tasks.Task;
 
-namespace server.Authorization {
+namespace server.Players.Authorization {
     public class AuthorizationCommands : Script {
         [Command(command: "reg", Description = "Register new account")]
         public async Task OnRegistration(Player player, string login, string email, string password) {

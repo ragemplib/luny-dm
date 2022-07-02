@@ -2,11 +2,11 @@
 
 namespace server.Gun {
     public class GunCommand : Script {
-        private readonly GunManager _gunManager = new GunManager();
+        private readonly GunsManager _gunsManager = new GunsManager();
 
         [Command(command: "gun")]
         public void OnGun(Player player, string gunName, int ammo) {
-            _gunManager.GiveGun(player, gunName, ammo);
+            _gunsManager.GiveGun(player, gunName, ammo);
         }
     }
 }
