@@ -1,16 +1,28 @@
 {
+	"announce": false, // true
 	"maxplayers" : 100,
-	"gamemode": "deathmatch",
-	"name" : "Luny DM [dm, tdm]",
-	"disallow-multiple-connections-per-ip": true,
+	"language": "us",
+	"name" : "Luny Freeroam | discord.gg/ksm9NDHDMg [DM] [TDM] [FREEROAM] [RACE] [GHETTO] [RU] [EN]",
+	"disallow-multiple-connections-per-ip": false,
 	"trigger-compression-logging": true,
 	"allow-cef-debugging": true,
 	"nodejs": false,
+	"enable-http-security": true,
 	"voice-chat": true,
-	"limit-time-of-connections-per-ip": 99,
+	"allow-voice-chat-input": 1,
+	"voice-chat-sample-rate": 48000,
+	"server-side-weapons-only-mode": true,
+	"api-threading-debugging": true,
+	"synchronization-extrapolation-multiplier": 1.0,
+	"http-threads": 1, // only for development, should be 0
+	"fqdn": "luny-freeroam.mp",
+	"resources-compression-level": 0, // // only for development, should be 2
+	"limit-time-of-connections-per-ip": 99, // only for development, should be 0
+	"url": "luny-rage.com",
+	"min-fps": 10,
 	"gamemode" : "freeroam", 
 	"stream-distance" : 500.0,
-	"announce" : false,
 	"csharp" : "enabled",
+	"encryption": true,
 	"port": 22005
 }

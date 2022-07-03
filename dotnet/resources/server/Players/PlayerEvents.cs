@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 using GTANetworkAPI;
 using server.Util;
 using static server.Players.PlayerEventEnum;
@@ -13,8 +14,8 @@ namespace server.Players {
         }
 
         [ServerEvent(Event.PlayerDisconnected)]
-        public async void OnPlayerDisconnected(Player player) {
-            AsyncUtil.RunAsyncTask( async () => await HttpUtil.DiscordRequest($"{player.Name} PlayerDisconnected"));
+        public async void OnPlayerDisconnected(Player player, DisconnectionType type, string reason) {
+            AsyncUtil.RunAsyncTask( async () => await HttpUtil.DiscordRequest($" PlayerDisconnected"));
         }
 
         [ServerEvent(Event.PlayerSpawn)]

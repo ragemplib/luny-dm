@@ -2,6 +2,8 @@ DROP DATABASE IF EXISTS luny;
 CREATE DATABASE luny;
 grant all privileges on database luny to postgres;
 \c luny
+---------------------------------------------------------------------------------------------------------------------------
+-- PLAYER
 
 CREATE TABLE player (
 	id serial PRIMARY KEY,
@@ -9,15 +11,6 @@ CREATE TABLE player (
 	email VARCHAR(20) UNIQUE NOT NULL,
 	root_level INT DEFAULT 0,
 	password VARCHAR(255) NOT NULL
-);
-
-CREATE TABLE stat (
-	id serial PRIMARY KEY,
-	player_id Int references player (id) NOT NULL,
-	current_mode INT DEFAULT 0,
-	current_room INT DEFAULT 0,
-	last_connection_time timestamp,
-	create_time timestamp
 );
 
 create table mode (
@@ -28,11 +21,38 @@ create table mode (
 	money INT DEFAULT 0,
 	point INT DEFAULT 0,
 	type INT DEFAULT 0,
-	last_connected_time timestamp,
-	last_exit_time timestamp
+	create_time timestamp
 );
 
-CREATE TABLE property (
+create table abilities (
+	id serial PRIMARY KEY,
+	player_id Int references player (id) NOT NULL,
+	fast_respawn bool default false,
+	ghetto_veh bool default false,
+	immortal_car bool default false,
+	better_gun_ghetto bool default false,
+	room_creation bool default false,
+	gang_creation bool default false
+);
+
+---------------------------------------------------------------------------------------------------------------------------
+-- GANG
+
+CREATE TABLE gang (
+	id serial PRIMARY KEY,
+	owner_player_id Int references player (id) NOT NULL
+);
+
+---------------------------------------------------------------------------------------------------------------------------
+-- PROPERTY OWNERSHIP 
+
+CREATE TABLE ownership (
+	id serial PRIMARY KEY,
+	owner_id Int,
+	type Int
+);
+
+CREATE TABLE transport (
 	id serial PRIMARY KEY,
 	name VARCHAR(20),
 	cost INT,
@@ -40,18 +60,33 @@ CREATE TABLE property (
 	class INT
 );
 
-CREATE TABLE player_car (
-	player_id Int PRIMARY KEY references player (id) NOT NULL,
-	car_id Int references property (id) NOT NULL,
-	destroyed Boolean,
-	create_time timestamp
+CREATE TABLE house (
+	id serial PRIMARY KEY,
+	name VARCHAR(20),
+	cost INT,
+	type INT,
+	class INT
 );
 
-CREATE TABLE player_house (
+CREATE TABLE owned_transport (
 	player_id Int PRIMARY KEY references player (id) NOT NULL,
-	house_id Int references property (id) NOT NULL,
-	create_time timestamp
+	car_id Int references transport (id) NOT NULL,
+	destroyed Boolean
 );
+
+CREATE TABLE owned_house (
+	player_id Int PRIMARY KEY references player (id) NOT NULL,
+	house_id Int references house (id) NOT NULL
+);
+
+CREATE TABLE owned_house_storage (
+	owned_house_id Int references house (id) NOT NULL,
+	item_id Int,
+	amount Int
+);
+
+---------------------------------------------------------------------------------------------------------------------------
+-- TRANSACTIONS
 
 CREATE TABLE account_type (
 	id serial PRIMARY KEY
@@ -70,3 +105,5 @@ CREATE TABLE transaction (
 	hold INT DEFAULT 0,
 	amount INT DEFAULT 0
 )
+
+---------------------------------------------------------------------------------------------------------------------------
